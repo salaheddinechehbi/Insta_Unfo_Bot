@@ -7,13 +7,14 @@ class InstaBot:
         self.driver = webdriver.Chrome()
         self.driver.get("https://instagram.com")
         sleep(10)
+        self.driver.find_element_by_xpath("//a[contains(text(), 'Connectez-vous')]").click()
+        sleep(10)
     
 
 #Twitter()
 fh = open("compte.txt","r")
-
 my_text_pw = str(fh.readline())
 my_text_username = str(fh.readline())
-print(my_text_pw)
-print(my_text_username)
+"""print(my_text_pw)
+print(my_text_username)"""
 InstaBot(my_text_username,my_text_pw)
