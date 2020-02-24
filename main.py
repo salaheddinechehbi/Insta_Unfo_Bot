@@ -22,10 +22,16 @@ class InstaBot:
     
     def getInfollowers(self):
         self.driver.find_element_by_xpath("//a[contains(text(), 'crepeccino_ma')]").click()
-        sleep(5)
+        sleep(2)
+        url_cmp = "/crepeccino_ma/followers/"
+        self.driver.find_element_by_xpath('//a[@href="'+url_cmp+'"]').click()
+        #self.driver.find_element_by_xpath("//a[contains(@href='"+url_cmp+"')]").click()
+        sleep(2)
       
 
 fh = open("compte.txt","r")
 my_text_username = str(fh.readline())
 my_text_pw = str(fh.readline())
+
 my_bot = InstaBot(my_text_username,my_text_pw)
+my_bot.getInfollowers()
